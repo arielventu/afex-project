@@ -6,13 +6,16 @@ import VideoCard from "./VideoCard";
 import ModalComponent from "./ModalComponent";
 import axios from "axios";
 import { ytIdExtractor } from "../utils";
-import { apiKey } from "../z_utils";
+// import { apiKey } from "../z_utils";
+
 
 const Home = () => {
   // const { videos, setVideos } = useContext(Context);
   // const [link, setLink] = useState("");
   // const [videoId, setVideoId] = useState("");
   // const [bandera, setBandera] = useState(false)
+
+  const apiKeyYT = process.env.apiKey || apiKey;
 
   const {
     show,
@@ -55,7 +58,7 @@ const Home = () => {
 
   const handleAddVideo = () => {
     getVideoDetailsFromYtApi(
-      `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKey}&part=snippet&part=contentDetails`
+      `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKeyYT}&part=snippet&part=contentDetails`
       ).then((data) => {
       const { items } = data;
       const { id, snippet, contentDetails } = items[0];
