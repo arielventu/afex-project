@@ -1,26 +1,16 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png"
 
 const Header = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="primary" variant="dark" style={{ height: "3rem" }} className="fixed-top">
         <Container>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <Navbar.Brand>MiniApp</Navbar.Brand>
+            <img src={logo} alt="logo" style={{ maxWidth: 40 }} />
+            <Navbar.Brand>  Mis videos favoritos</Navbar.Brand>
           </Link>
-          <Nav className="me-auto">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <Container>
-                <a className="text-secondary fs-6" style={{ textDecoration: "none" }}>Estudiantes</a>
-              </Container>
-            </Link>
-            <Link to="/create" style={{ textDecoration: "none" }}>
-              <Container>
-                <a className="text-secondary fs-6" style={{ textDecoration: "none" }}>Nuevo estudiante</a>
-              </Container>
-            </Link>
-          </Nav>
         </Container>
       </Navbar>
     </>

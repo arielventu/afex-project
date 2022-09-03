@@ -1,29 +1,36 @@
 import React from "react";
-import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import Home from "./components/Home";
-import CreateStudent from "./components/CreateStudent";
 import NotFound from "./components/NotFound";
-import api from "./api.json";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Context from './context/StudentsState'
 import Footer from "./components/Footer";
+// import VideoDetail from "./components/VideoDetail";
+import Context from "./context/State";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [students, setStudents] = React.useState(api);
-
-  const addStudent = (payload) => {
-    setStudents([...students, payload]);
-  };
-  
+  const [videos, setVideos] = React.useState([]);
+  const [show, setShow] = React.useState(false);
+  const [video, setVideo] = React.useState({
+    id: "",
+    title: "",
+    description: "",
+    thumbnail: "",
+    ytId: "",
+    link: ""
+  });
+  const [link, setLink] = React.useState("");
+  const [videoId, setVideoId] = React.useState("");
 
   return (
-    <Context.Provider value={{students, addStudent}}>
+    <Context.Provider
+      value={{ videos, setVideos, show, setShow, video, setVideo, link, setLink, videoId, setVideoId }}
+    >
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/create" element={<CreateStudent />} />
+          {/* <Route path="/detail" element={<VideoDetail />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

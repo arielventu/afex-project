@@ -2,13 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import axios from 'axios';
+import {URL_AWS} from './z_utils.js'
 import reportWebVitals from "./reportWebVitals";
+
+axios.defaults.baseURL = process.env.REACT_APP_API || URL_AWS;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <React.Fragment>
       <App />
-  </React.StrictMode>
+  </React.Fragment>
 );
 
 // If you want to start measuring performance in your app, pass a function

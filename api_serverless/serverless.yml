@@ -20,6 +20,12 @@ functions:
       - httpApi:
           path: /
           method: get
+  getVideo:
+    handler: src/getVideo.getVideo
+    events:
+      - httpApi:
+          path: /{id}
+          method: get
   addVideo:
     handler: src/addVideo.addVideo
     events:

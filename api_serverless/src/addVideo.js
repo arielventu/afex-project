@@ -3,11 +3,16 @@ const AWS = require("aws-sdk");
 
 module.exports.addVideo = async (event) => {
   const dynamodb = new AWS.DynamoDB.DocumentClient();
-  const { ytId } = JSON.parse(event.body);
+  const { ytId, title, description, thumbnail, duration, link } = JSON.parse(event.body);
   const id = v4();
   const newVideo = {
     id,
     ytId,
+    title,
+    description,
+    thumbnail,
+    duration,
+    link
   };
 
   await dynamodb
