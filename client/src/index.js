@@ -6,7 +6,8 @@ import axios from 'axios';
 // import {URL_AWS} from './z_utils.js'
 import reportWebVitals from "./reportWebVitals";
 
-axios.defaults.baseURL = process.env.REACT_APP_API || URL_AWS;
+// axios.defaults.baseURL = process.env.REACT_APP_API || URL_AWS;
+axios.defaults.baseURL = process.env.REACT_APP_API
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

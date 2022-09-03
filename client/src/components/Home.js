@@ -15,7 +15,8 @@ const Home = () => {
   // const [videoId, setVideoId] = useState("");
   // const [bandera, setBandera] = useState(false)
 
-  const apiKeyYT = process.env.apiKey || apiKey;
+  // const apiKeyYT = process.env.apiKey || apiKey;
+  const apiKeyYT = process.env.apiKey 
 
   const {
     show,
