@@ -16,8 +16,8 @@ const Home = () => {
   // const [bandera, setBandera] = useState(false)
 
   // const apiKeyYT = process.env.apiKey || apiKey;
-  const apiKeyYT = process.env.API_KEY 
-
+  const apiKeyYT = process.env.REACT_APP_AFEX_API_KEY 
+  
   const {
     show,
     setShow,
