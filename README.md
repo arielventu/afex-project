@@ -18,5 +18,6 @@ Serverless, NodeJS en AWS Lambda y AWS Dynamodb para la persistencia de datos
 ### -Permite ver los detalles de un video seleccionado, tales como título y descripción.
 <img align="center" src="https://github.com/arielventu/afex-project/blob/master/client/src/assets/details.png" title="details" alt="Ariel Ventura" /> 
 
+### -Permite reproducir el video seleccionado.
 
 ## Deploy del proyecto [(clic aquí)](https://afex-project.vercel.app/)
